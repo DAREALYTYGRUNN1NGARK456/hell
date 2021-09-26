@@ -1,0 +1,88 @@
+<nav
+  class="navbar is-transparent m-3"
+  role="navigation"
+  aria-label="main navigation"
+>
+  <div class="navbar-brand">
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="thornNavbar"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="thornNavbar" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/">
+        <h1 class="is-size-4 has-text-weight-bold navbar-item">
+          <i class="fas fa-robot mr-3"></i> Thorn
+        </h1>
+      </a>
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a
+            class="button is-light has-text-weight-bold"
+            href="https://discord.gg/TAzSY3PFKy"
+          >
+            <i class="fas fa-question-circle mx-1"></i>
+            <p>Support</p>
+          </a>
+          <a class="button is-light has-text-weight-bold" href="/dashboard">
+            <i class="fas fa-cog mx-1"></i>
+            <p>Dashboard</p>
+          </a>
+
+          <% if (user) { %>
+		      <li class="nav-item dropdown">
+                <a class="button is-light dropdown-toggle" href="/auth/logout" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <p class="has-text-weight-bold"><%= user.username %>#<%= user.discriminator %></p>
+                  <img height="30" style="border-radius: 50%;" class="ml-2" src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>"/>
+                </a>
+            </a>
+          <% } else { %>
+          <a class="button is-light has-text-weight-bold" href="/auth/login">
+            <i class="fab fa-discord mx-1"></i>
+            <p>Login</p>
+          </a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const $navbarBurgers = Array.prototype.slice.call(
+      document.querySelectorAll(".navbar-burger"),
+      0
+    );
+
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach((el) => {
+        el.addEventListener("click", () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          const $start = document
+            .getElementsByClassName("navbar-start")
+            .item(0);
+          $start.hidden = !!true;
+
+          el.classList.toggle("is-active");
+          $target.classList.toggle("is-active");
+        });
+      });
+    }
+  });
+</script>

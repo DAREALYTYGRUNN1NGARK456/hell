@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<%- include('partials/head.ejs') %>
+		<title>Thorn Privacy Policy</title>
+		<meta content="Privacy Policy" property="og:title" />
+		<meta content="Privacy policy of Thorn, a fully customizable Discord bot that is constantly growing." property="og:description" />
+		<meta name="theme-color" content="#8A215A" />
+	</head>
+	<body>
+		<%- include('partials/navbar.ejs', { user }) %>
+
+		<div class="container has-text-centered">
+			<h1 class="title"><i class="fas fa-user-secret mr-2"></i>Privacy Policy</h1>
+			<h2 class="subtitle">Because, we care about your privacy.</h2>
+			<p>*The following privacy policy outlines how your data is used on our website. <br />The site administration has the right to change this privacy policy at any point without warning.</p>
+
+			<div class="content policy mt-5">
+				<ol type="none">
+					<li>
+						<h1>Data</h1>
+						<ol type="I">
+							<li>Basic non-identifiable information about your user on the website is collected; the majority of which is provided during first-time login, such as email addresses and usernames.</li>
+							<li>IP addresses for registered users are stored within the system to aid with moderation duties. This includes spam prevention, and detecting alternative accounts.</li>
+							<li>Account data can be deleted by a site administrator upon request, which will remove all data relating to your user from our system.</li>
+						</ol>
+					</li>
+					<li>
+						<h1>Cookies</h1>
+						<ol type="I">
+							<li>Cookies are used to store small pieces of non-identifiable information with your consent. In order to consent to the use of cookies, by using our website you consent to the use of cookies.</li>
+							<li>Data stored by cookies include Discord IDs, Discord discriminator, Discord avatar, along with a unique token, and a unidentifiable hash.</li>
+						</ol>
+					</li>
+					<li>
+						<h1>Arc</h1>
+						<ol type="I">
+							<li>Arc loads content from people's devices near you instead of from slower servers. In return, it helps your device provide content to others.</li>
+							<li> Just by being here, you share a little bandwidth for Thorn and help create a faster Internet with fewer ads.</li>
+							<li>Arc doesn't impact your data or performance, and you can opt out any time.</li>
+							<li><a href="https://arc.io/#whatArcDoes" target="blank">Learn more here</a></li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+		</div>
+
+		<%- include('partials/footer.ejs') %>
+	</body>
+
+	<style>
+		.policy > ol > li {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.policy > ol {
+			font-size: 0;
+			margin: 2rem;
+		}
+
+		.policy > ol > li > h1 {
+			text-align: center;
+			font-size: 2rem;
+		}
+
+		.policy > ol > li > ol > li {
+			text-align: left;
+			font-size: 16px;
+		}
+
+		.policy > ol > li > ol {
+			text-align: left;
+		}
+	</style>
+</html>

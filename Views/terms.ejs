@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<%- include('partials/head.ejs') %>
+		<title>Thorn TOS</title>
+		<meta content="Terms of Service" property="og:title" />
+		<meta content="Terms of service of Thorn, a fully customizable Discord bot that is constantly growing." property="og:description" />
+		<meta name="theme-color" content="#8A215A" />
+	</head>
+	<body>
+		<%- include('partials/navbar.ejs', { user }) %>
+
+		<div class="container has-text-centered">
+			<h1 class="title"><i class="fas fa-file-signature mr-2"></i>Terms of Service</h1>
+
+			<div style="height: 50%" class="is-flex is-justify-content-center is-align-items-center is-flex-grow m-5">
+				<p>
+					You agree to be bound by our website rules and any laws which may apply to this website and your participation. The website administration have the right to ban your account or guild at any time, delete any content you
+					may have posted, and use your IP address and any data you input to the website to assist the site staff with their moderation duties. The site administration have the right to change these terms and conditions, and any
+					site rules, at any point without warning. Whilst you may be informed of any changes, it is your responsibility to check these terms and the rules at any point.
+				</p>
+			</div>
+		</div>
+
+		<%- include('partials/footer.ejs') %>
+	</body>
+</html>

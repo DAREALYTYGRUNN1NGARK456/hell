@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('partials/head.ejs') %>
+	</head>
+
+	<body>
+		<%- include('partials/navbar.ejs', { user, bot }) %>
+	
+		<div>
+			<h1 class="title has-text-centered">Servers</h1>
+			<div class="is-flex is-flex-wrap-wrap is-justify-content-center m-5">
+				<% for (const guild of guilds) { %> <% const url = guild.icon ? `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png?size=256` :
+				'https://cdn.discordapp.com/attachments/881622625661644832/884854263795310592/fuck.png';%>
+
+				<div class="card m-2 is-flex-grow-1">
+					<div class="card-content">
+						<div class="media">
+							<div class="media-left">
+								<figure class="image is-48x48">
+									<img src="<%= url %>" alt="Guild smol" />
+								</figure>
+							</div>
+							<div class="media-content">
+								<p class="title is-4"><%= guild.name %></p>
+								<p class="subtitle is-6"><%= guild.id %></p>
+							</div>
+						</div>
+					</div>
+					<footer class="card-footer">
+						<% const cachedGuild = bot.guilds.cache.get(String(guild.id)); %>
+						<% if (cachedGuild) { %>
+							<% if (cachedGuild.member(user.id).permissions.has('MANAGE_GUILD')) { %>
+						<a href="#" class="card-footer-item">Manage</a>
+							<% } %>
+						<% } else { %>
+						<a href="https://discord.com/oauth2/authorize?client_id=879449679916568626&permissions=139855219863&scope=bot%20applications.commands" class="card-footer-item">Invite</a>
+						<% } %>
+					</footer>
+				</div>
+				<% } %>
+			</div>
+		</div>
+
+		<%- include('partials/footer.ejs') %>
+	</body>
+</html>

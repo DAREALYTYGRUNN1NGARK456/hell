@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('partials/navbar.ejs', { user }) %>
+
+    <section class="section">
+      <div
+        class="container has-text-centered"
+        style="
+          background-image: url(https://astrobotlist.co/img/batsflying2.gif);
+        "
+      >
+        <img class="logo mb-3" src="https://astrobotlist.co/img/logo.png" />
+        <h1 class="title">The only Discord bot you'll ever need.</h1>
+
+        <p class="subtitle">
+          Thorn is a, fully customizable and constantly growing Discord bot.
+          <br />
+          She has a variety of commands and a multitude of settings that can be
+          tailored to your server's specific needs!
+        </p>
+
+        <a
+          class="button is-light has-text-weight-bold"
+          href="https://discord.com/api/oauth2/authorize?client_id=879449679916568626&permissions=139855219863&scope=bot%20applications.commands"
+          ><i class="fab fa-discord mx-1"></i>Add to Discord</a
+        >&ensp;
+        <a class="button is-light has-text-weight-bold" href="#features"
+          >See Features</a
+        >
+      </div>
+    </section>
+
+    <hr />
+
+    <section class="section mb-5">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          Used by over <%= serverCount %> servers and <%= userCount %> users!
+        </h1>
+      </div>
+    </section>
+
+    <hr />
+
+    <section class="section">
+      <div
+        class="
+          restrict
+          is-flex
+          is-flex-wrap-wrap
+          is-align-items-center
+          is-align-self-center
+          is-align-content-center
+          is-justify-content-center
+          m-5
+        "
+      >
+        <div>
+          <h1
+            class="
+              has-text-left has-text-weight-bold
+              is-size-1 is-size-3-mobile
+              my-3
+            "
+          >
+            Levels and XP in your Discord <br />Server
+          </h1>
+
+          <p class="has-text-left">
+            Gamers love to grind. Use our leveling system to identify and <br />
+            reward the most active members of your community. Let them <br />
+            show off a cool customizable rank card and compete for the <br />
+            mighty first spot of your leaderboard! <br /><br />
+            Coming Soon! Automatically give roles when they reach a certain
+            level to reward <br />
+            the most active members with access to exclusive channels and <br />
+            privileged permissions!
+          </p>
+        </div>
+
+        <div class="responsive-image">
+          <img class="image" src="https://astrobotlist.co/img/rankcard.png" />
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section class="section">
+      <div
+        class="
+          restrict
+          is-flex
+          is-flex-wrap-wrap
+          is-align-items-center
+          is-align-self-center
+          is-align-content-center
+          is-justify-content-center
+          m-5
+        "
+      >
+        <div>
+          <h1
+            class="
+              has-text-right has-text-weight-bold
+              is-size-1 is-size-3-mobile
+              my-3
+            "
+          >
+            Say hi to new users on your <br />Discord server
+          </h1>
+
+          <p class="has-text-right">
+            Take advantage of the welcome message to inform newcomers <br />
+            about your server rules, topic, or ongoing events. You can design
+            <br />
+            your own welcome card or keep it simple. <br />
+            This feature is Coming Soon!
+          </p>
+        </div>
+
+        <div class="responsive-image">
+          <img class="image" src="https://astrobotlist.co/img/rankcard.png" />
+        </div>
+      </div>
+    </section>
+
+    <%- include('partials/footer.ejs') %>
+  </body>
+  <style>
+    hr {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .responsive-image {
+      margin-top: 2em;
+    }
+
+    @media screen and (min-width: 1024px) {
+      .responsive-image {
+        margin-left: auto;
+        margin-top: 0;
+      }
+    }
+
+    .image {
+      border-radius: 5px;
+      box-shadow: 5px 5px rgba(197, 1, 1, 0.4), 10px 10px rgba(197, 0, 0, 0.3),
+        15px 15px rgba(197, 0, 0, 0.2), 20px 20px rgba(197, 0, 0, 0.1),
+        25px 25px rgba(197, 3, 3, 0.05);
+    }
+
+    .logo {
+      border-radius: 50%;
+      width: 200px;
+      position: relative;
+      background: #222222;
+      -moz-box-shadow: 0 0 5px 5px #fc2929;
+      -webkit-box-shadow: 0 0 5px 5px #fc2929;
+      box-shadow: 0 0 5px 5px #fc2929;
+      -moz-border-radius: 180px;
+      -webkit-border-radius: 180px;
+      border-radius: 180px;
+    }
+  </style>
+</html>
